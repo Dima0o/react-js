@@ -2,24 +2,23 @@ import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 
 import { Badge } from 'reactstrap';
-//import Header from './components/Header';
+import Nav from './components/Nav';
 const menuItems = [
     { link: 'https://geekbrains.com', title: 'Home' },
     { link: 'https://geekbrains.com/news', title: 'News' }
 ];
 
-
+ReactDOM.render(
+    (<nav className="nav d-flex justify-content-between">{menuItems.map(item => <a className="p-2 text-muted">{item.title}</a>)}</nav>),
+    document.getElementById('naw-header')
+);
 
 
 
 class Apps extends Component {
   render () {
     return (
-      <div>
-        <p>
-            <nav className="nav d-flex justify-content-between">{menuItems.map(item => <a className="p-2 text-muted">{item.title}</a>)}</nav>
-        </p>
-      </div>
+      <Nav/>
     )
   }
 }
